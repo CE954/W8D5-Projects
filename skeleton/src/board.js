@@ -9,6 +9,15 @@ if (typeof window === 'undefined'){
  * and two white pieces at [3, 3] and [4, 4]
  */
 function _makeGrid () {
+  let arr = Array(8);
+  for (i = 0; i < arr.length; i++) {
+    arr[i] = new Array(8);
+  }
+  arr[3][4] = new Piece("black"); 
+  arr[4][3] = new Piece("black"); 
+  arr[3][3] = new Piece("white");
+  arr[4][4] = new Piece("white");
+  return arr;
 }
 
 /**
@@ -28,6 +37,13 @@ Board.DIRS = [
  * Checks if a given position is on the Board.
  */
 Board.prototype.isValidPos = function (pos) {
+  let x = pos[0];
+  let y = pos[1]; 
+  if (x >= 0 && x <= 7 && y >= 0 && y <= 7) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /**
@@ -35,6 +51,7 @@ Board.prototype.isValidPos = function (pos) {
  * throwing an Error if the position is invalid.
  */
 Board.prototype.getPiece = function (pos) {
+  if 
 };
 
 /**
@@ -112,6 +129,7 @@ Board.prototype.isOver = function () {
  * Prints a string representation of the Board to the console.
  */
 Board.prototype.print = function () {
+ 
 };
 
 
